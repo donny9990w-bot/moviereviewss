@@ -1,6 +1,5 @@
-"""
-URL configuration for moviereviews project.
-
+"""URL configuration for moviereviews project.
+ 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
 Examples:
@@ -16,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from movie import views
-
+from movie import views as movieViews
+from django.conf.urls.static import static
+from django.conf import settings
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-    path('about/', views.about),
+    path('', movieViews.home),
+    path('about/', movieViews.about),
 ]
+ 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
