@@ -5,4 +5,4 @@ def home(request):
     return render(request, 'home.html', {'name': 'Juan D. Bedoya Cantor'})
 
 def about(request):
-    return HttpResponse("About")
+ return render(request, 'about.html')
