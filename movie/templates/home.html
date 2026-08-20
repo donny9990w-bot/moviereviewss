@@ -25,6 +25,14 @@ columnas en pantallas grandes-->
 {% if movie.url %}
 <a href="{{ movie.url }}" class="btn btn-primary">Movie Link</a>
 {% endif %}
+
+{% if movie.genre %}
+<p>{{ movie.genre }}</p>
+{% endif %}
+
+{% if movie.year %}
+<p>{{ movie.year }}</p>
+{% endif %}
 </div>
 </div>
 </div>
